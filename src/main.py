@@ -18,7 +18,7 @@ def main():
                 "content": "Explain the importance of fast language models",
             }
         ],
-        model=os.environ.get("ORACLE_MODEL", ""),
+        model=os.environ.get("GROQ_ORACLE_MODEL", ""),
     )
 
     print(chat_completion.choices[0].message.content)
