@@ -9,7 +9,7 @@ def initialize_client(groq_api_key: str) -> Groq:
 
 def main():
     """Main function to run the chat completion."""
-    client = initialize_client(groq_api_key=os.environ.get("GROQ_API_KEY", ""))
+    client = initialize_client(groq_api_key=os.environ.get("API_KEY", ""))
 
     chat_completion = client.chat.completions.create(
         messages=[
@@ -18,7 +18,7 @@ def main():
                 "content": "Explain the importance of fast language models",
             }
         ],
-        model=os.environ.get("GROQ_ORACLE_MODEL", ""),
+        model=os.environ.get("ORACLE_MODEL", ""),
     )
 
     print(chat_completion.choices[0].message.content)
